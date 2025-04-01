@@ -1,3 +1,4 @@
+# Stacking
 ```
                 ┌─────────────────────────────┐
                 │         Input Data          │
@@ -19,4 +20,19 @@
                                                         ↓
                                                최종 예측값 (확률)
 
+```
+
+
+# Embedding+ML
+
+```
+[ Raw Train ] → 전처리 → TabularModel(CategoricalEmbeddingModel) 학습
+                           ↓
+                    [ 학습된 Embedding Layer ]
+                           ↓
+   CategoricalEmbeddingTransformer 생성
+                           ↓
+     fit_transform(train), transform(test)
+                           ↓
+       [임베딩된 범주형] + [연속형] → ML 모델 학습
 ```
