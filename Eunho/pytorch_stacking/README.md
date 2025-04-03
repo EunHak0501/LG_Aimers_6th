@@ -1,4 +1,4 @@
-# Stacking
+# Stacking(pytorch_stacking.ipynb)
 ```
                 ┌─────────────────────────────┐
                 │         Input Data          │
@@ -23,7 +23,7 @@
 ```
 
 
-# Embedding+ML
+# Embedding+ML(categorical_embedding.ipynb)
 
 ```
 [ Raw Train ] → 전처리 → TabularModel(CategoricalEmbeddingModel) 학습
