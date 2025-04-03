@@ -21,7 +21,7 @@ import pandas as pd
 import numpy as np
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import OrdinalEncoder, OneHotEncoder, MultiLabelBinarizer
-from category_encoders import TargetEncoder, CountEncoder
+# from category_encoders import TargetEncoder, CountEncoder
 from prince import MCA
 # from sklearn.preprocessing import StandardScaler  # 필요시 사용
 
@@ -359,7 +359,7 @@ def lgbm_process(train, val, seed=42):
         "정자 기증자 나이",
         '시술유형_통합',
     ]
-    train, val = encoding(train, val, cols_to_encoding=cols_to_encoding, method='Ordinal')
+    # train, val = encoding(train, val, cols_to_encoding=cols_to_encoding, method='Ordinal')
     train, val = 단일배아이식여부(train, val)
     train, val = 배란유도유형(train, val)
     train, val = 배아생성주요이유(train, val)
