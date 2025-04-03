@@ -22,7 +22,7 @@ import numpy as np
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import OrdinalEncoder, OneHotEncoder, MultiLabelBinarizer
 # from category_encoders import TargetEncoder, CountEncoder
-# from prince import MCA
+from prince import MCA
 # from sklearn.preprocessing import StandardScaler  # 필요시 사용
 
 def drop_columns(df):
