@@ -359,7 +359,7 @@ def lgbm_process(train, val, seed=42):
         "정자 기증자 나이",
         '시술유형_통합',
     ]
-    # train, val = encoding(train, val, cols_to_encoding=cols_to_encoding, method='Ordinal')
+    train, val = encoding(train, val, cols_to_encoding=cols_to_encoding, method='Ordinal')
     train, val = 단일배아이식여부(train, val)
     train, val = 배란유도유형(train, val)
     train, val = 배아생성주요이유(train, val)
@@ -367,17 +367,4 @@ def lgbm_process(train, val, seed=42):
 
     return train, val
 
-if __name__ == '__main__':
-    # 실행 예시: 명령행 인자로 파일 경로를 지정하거나 기본값을 사용합니다.
-    import sys
-    train_path = sys.argv[1] if len(sys.argv) > 1 else 'train.csv'
-    test_path = sys.argv[2] if len(sys.argv) > 2 else 'test.csv'
 
-    train = pd.read_csv(train_path).drop(columns=['ID'])
-    test = pd.read_csv(test_path).drop(columns=['ID'])
-
-    train, test = lgbm_42_process(train, test)
-    print("Train shape:", train.shape)
-    print("Test shape:", test.shape)
-    if '임신 성공 여부' in train.columns:
-        print(train['임신 성공 여부'].value_counts())
