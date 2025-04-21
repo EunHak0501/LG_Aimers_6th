@@ -16,13 +16,13 @@ class TabularPipeline:
 
         # DataConfig 설정
         self.data_config = DataConfig(
-            target=["임신 성공 여부"],
+            target=["임신 성공 확률"],
             continuous_cols=self.numeric_cols,
             categorical_cols=self.cat_cols,
             # continuous_feature_transform="quantile_normal",  # 필요 시 주석 해제
             normalize_continuous_features=False,
         )
-
+        
         # TrainerConfig 설정
         self.trainer_config = TrainerConfig(
             auto_lr_find=True,  
@@ -49,7 +49,7 @@ class TabularPipeline:
 
         # 모델 구성 설정
         self.model_config = CategoryEmbeddingModelConfig(
-            task="classification",
+            task="regression",
             layers="512-256-16",  # 각 레이어의 노드 수
             activation="LeakyReLU",  # 레이어 간 활성화 함수
             dropout=0.1,
